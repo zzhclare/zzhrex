@@ -4,24 +4,70 @@
 <meta charset="utf-8">
 <title>zzhrex</title>
 <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Catamaran|Dancing+Script|Pinyon+Script|Righteous|Tangerine" rel="stylesheet">
+<!--
+<link href="https://fonts.googleapis.com/css?family=Catamaran|Dancing+Script|Merriweather|Montserrat|Pinyon+Script|Righteous|Tangerine" rel="stylesheet">
+-->
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-<style type="text/css">
-body{
-    text-align: center;
-    background: #F7FAFC;
-    overflow: hidden;
-    background: #fff;
-}
-</style>
 </head>
 
 <body>
-<canvas id="Mycanvas"></canvas>
-<div class="page-header">
-    <h1>挂着</h1>
+<canvas id="Mycanvas" style="z-index:-100;position:absolute;top:0px;left:0px;"></canvas>
+<div class="container">
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background:transparent; padding:12px 0px; height:80px;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" style="font-size:60px;font-family:'Dancing Script', sans-serif;">zzhRex</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/videos">Videos</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 </div>
-    <script>
+<div class="jumbotron" style="background:transparent;">
+    <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+
+    <hr>
+    <footer>
+        <p>&copy; Company 2014</p>
+    </footer>
+</div> 
+<script>
+    $('#myCarousel').carousel('cycle');
         //定义画布宽高和生成点的个数
         var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 70;
         
@@ -120,6 +166,8 @@ body{
                 draw();
             }, 10);
         }
+
+    //document.getElementById('wrapper').style.backgroundImage = "url('" + Mycanvas.toDataURL() + "')";
     </script>
 </body>
 </html>
