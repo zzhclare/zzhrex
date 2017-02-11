@@ -21,7 +21,7 @@
     </a>
 </div>
 <div class="ui top fixed secondary pointing menu">
-    <div class="ui item zzhrex" style="font-size:50px;font-family:'Dancing Script', sans-serif;padding-top:14px;padding-bottom:14px;cursor:pointer;">
+    <div class="ui item zzhrex" style="font-size:50px;font-family:'Dancing Script', sans-serif;margin-left:57px;padding:14px;cursor:pointer;">
         zzhRex
     </div>
     <div class="ui container">

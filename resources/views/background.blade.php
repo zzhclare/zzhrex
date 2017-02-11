@@ -1,10 +1,8 @@
 <canvas id="Mycanvas" style="z-index:-100;position:absolute;top:0px;left:0px;"></canvas>
 
-
-
 <script>
     //定义画布宽高和生成点的个数
-    var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 70;
+    var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 40;
     
     var canvas = document.getElementById('Mycanvas');
     canvas.width = WIDTH,
