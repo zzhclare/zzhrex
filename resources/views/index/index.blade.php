@@ -57,18 +57,35 @@
         @yield('content')
     </div> 
 </div>
-<div class="ui modal login">
+<div class="ui small modal login">
     <i class="close icon"></i>
-    <div class="header">
-        Login
+        <div class="ui header center aligned" style="font-size:50px;font-family:'Dancing Script', sans-serif;">
+            zzhRex
+        </div>
+    <div class="content">
+        <form class="ui form">
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="ui user icon"></i>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="ui lock icon"></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="ui fluid teal submit button">Login</div>
+        </form>
     </div>
 </div>
 
 <script>
 $(document).ready(function(){
-    $('.ui.dropdown').dropdown();
+        $('.ui.dropdown').dropdown();
 
-    $('.ui.modal.login').modal({blurring: true});
+        $('.ui.modal.login').modal({blurring: true});
 
     $('.first.item.login').click(function(){
         $('.modal.login').modal('show');
