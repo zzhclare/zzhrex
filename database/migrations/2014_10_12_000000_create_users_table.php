@@ -20,7 +20,14 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->enum('role', ['systemAdmin', 'admin', 'guest']);
         });
+        \DB::table('users')->insert([
+            'name' => 'zzhrex',
+            'email' => 'zzh@wrdtech.com',
+            'password' => bcrypt('zzhRex123$%^'),
+            'role' => 1,
+        ]);
     }
 
     /**
