@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Catamaran|Dancing+Script|Merriweather|Montserrat|Pinyon+Script|Righteous|Tangerine" rel="stylesheet">
 -->
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
-<script src="{{ asset('/js/semantic.min.js') }}"></script>
+<script src="{{ asset('/js/semantic.js') }}"></script>
 @yield('additional_js')
 </head>
 
