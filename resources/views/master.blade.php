@@ -11,6 +11,8 @@
 -->
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/semantic.js') }}"></script>
+<script src="{{ asset('/js/vue.js') }}"></script>
+
 @yield('additional_js')
 </head>
 
