@@ -63,7 +63,7 @@
             zzhRex
         </div>
     <div class="content">
-        <form class="ui form">
+        <form class="ui form login" method="post" action="{{ url('/login') }}">
             <div class="field">
                 <div class="ui left icon input">
                     <i class="ui user icon"></i>
@@ -76,16 +76,17 @@
                     <input type="password" name="password" placeholder="Password">
                 </div>
             </div>
-            <div class="ui fluid teal submit button">Login</div>
+            <div class="ui fluid teal submit button" id="login-submit">Login</div>
+            <div class="ui error message"></div>
         </form>
     </div>
 </div>
 
 <script>
 $(document).ready(function(){
-        $('.ui.dropdown').dropdown();
+    $('.ui.dropdown').dropdown();
 
-        $('.ui.modal.login').modal({blurring: true});
+    $('.ui.modal.login').modal({blurring: true});
 
     $('.first.item.login').click(function(){
         $('.modal.login').modal('show');
@@ -98,6 +99,10 @@ $(document).ready(function(){
     $('.first.item').click(function(){
         $('.first.item').removeClass('active');
         $(this).addClass('active');
+    });
+
+    $('#login-submit').click(function(){
+        $('.login.form').submit();
     });
 });
 </script>
