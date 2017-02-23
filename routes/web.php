@@ -15,4 +15,11 @@ Route::get('/', function () {
     return view('index.index');
 });
 
+Route::get('/login', 'Login\LoginController@index');
+
 Route::post('/login', 'Login\LoginController@Login');
+
+Route::group(['middleware' => ['Auth']], function (){
+    //Route::controller('management', 'ManagementController');
+    //Route::controller('publish', 'PublishController');
+});
