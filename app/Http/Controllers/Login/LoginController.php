@@ -19,6 +19,13 @@ class LoginController extends Controller
     public function Login(REQUEST $request){
         $name = $request->username;
         $password = $request->password;
-        dd($request->input());
+
+        if(Auth::attempt(['name' => $name, 'password' => $password])){
+            dd('login!');
+            return redirect('/management');
+        }
+        else{
+            return redirect('/login')->with('error', 'Username or Password is wrong!');
+        }
     }
 }

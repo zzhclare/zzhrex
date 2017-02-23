@@ -9,7 +9,7 @@
         <h2 class="ui header" style="font-size:50px;font-family:'Dancing Script', sans-serif;">
             zzhRex
         </h2>
-        <form class="ui large form">
+        <form class="ui large form" method="POST" action="{{ url('/login') }}">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
@@ -24,9 +24,24 @@
                     </div>
                 </div>
                 <div class="ui fluid large teal submit button">Login</div>
+                @if(session('error'))
+                <div class="ui visible message error">
+                    {{session('error')}}
+                </div>
+                @endif
             </div>
         </form>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    $('.form').form();
+    $('.submit').click(function(){
+        $('.form').submit();
+    });
+
+});
+</script>
 
 @endsection
