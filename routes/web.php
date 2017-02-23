@@ -19,7 +19,7 @@ Route::get('/login', 'Login\LoginController@index');
 
 Route::post('/login', 'Login\LoginController@Login');
 
-Route::group(['middleware' => ['Auth']], function (){
+Route::group(['middleware' => ['auth']], function (){
     //Route::controller('management', 'ManagementController');
     //Route::controller('publish', 'PublishController');
 });
