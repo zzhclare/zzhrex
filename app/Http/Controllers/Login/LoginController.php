@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Auth;
+
 class LoginController extends Controller
 {
     public function index(){
@@ -15,6 +17,8 @@ class LoginController extends Controller
     }
 
     public function Login(REQUEST $request){
-        dd($request);
+        $name = $request->username;
+        $password = $request->password;
+        dd($request->input());
     }
 }
