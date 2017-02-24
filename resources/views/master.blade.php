@@ -31,7 +31,9 @@
         </a>
     </div>
 </div>
+<div class="ui container" style="margin-top:80px;background-color:white;">
 @yield('content')
+</div>
 <script>
 $(document).ready(function(){
 
