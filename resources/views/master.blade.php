@@ -31,11 +31,7 @@
         </a>
     </div>
 </div>
-<div class="ui container">
-    <div class="ui blue segment">
-        @yield('content')
-    </div>
-</div>
+@yield('content')
 <script>
 $(document).ready(function(){
 
