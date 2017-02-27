@@ -1,6 +1,19 @@
 <canvas id="Mycanvas" style="z-index:-100;position:absolute;top:0px;left:0px;"></canvas>
 
 <script>
+window.addEventListener("resize", function(){
+    WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 40;
+    
+    canvas = document.getElementById('Mycanvas');
+    canvas.width = WIDTH,
+    canvas.height = HEIGHT;
+    context = canvas.getContext('2d');
+    context.strokeStyle = 'rgba(0,0,0,0.2)',
+    context.strokeWidth = 1,
+    context.fillStyle = 'rgba(0,0,0,0.1)';
+    
+    onload();
+}, false);
     //定义画布宽高和生成点的个数
     var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 40;
     
@@ -26,8 +39,8 @@
         this.x = x,
         this.y = y,
         this.r = r,
-        this.moveX = 2 * moveX,
-        this.moveY = 2 * moveY;
+        this.moveX = moveX,
+        this.moveY = moveY;
     }
     //生成max和min之间的随机数
     function num (max, _min) {
@@ -58,7 +71,7 @@
     function draw () {
         context.clearRect(0,0,canvas.width, canvas.height);
         for (var i = 0; i < POINT; i++) {
-            drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r);
+            drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r, circleArr[i].moveX, circleArr[i].moveY);
         }
         for (var i = 0; i < POINT; i++) {
             for (var j = 0; j < POINT; j++) {
@@ -84,7 +97,7 @@
         draw();
     }
     //调用执行
-    window.onload = function () {
+    window.onload = function onload () {
         init();
         setInterval(function () {
             for (var i = 0; i < POINT; i++) {
