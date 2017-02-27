@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<div class="ui top fixed secondary pointing menu">
+<div class="ui top fixed secondary pointing menu" style="background-color:white;">
     <a class="ui item" href="/" style="font-size:50px;font-family:'Dancing Script', sans-serif;margin-left:57px;padding:14px;cursor:pointer;">zzhRex</a>
     <div class="right item" style="margin-right:57px;">
         <form method="get" action="" class="ui form search-form" style="margin-right:14px;">
