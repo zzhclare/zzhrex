@@ -16,6 +16,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "github-markdown-css": "^2.4.1",
     "semantic-ui": "^2.2.7"
   }
 }
