@@ -5,12 +5,13 @@
 @section('content')
 <div class="ui segment" style="min-height:900px;">
     <div class="ui divided items">
+        @foreach($articles as $article)
         <div class="item">
             <div class="ui small rounded image">
                 <img src="{{asset('images/gundam.jpg')}}">
             </div>
             <div class="content">
-                <a class="header">12 Years a Slave</a>
+                <a class="header">{{$article}}</a>
                 <div class="meta">
                     <span class="cinema">Union Square 14</span>
                 </div>
@@ -23,195 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="ui small rounded image">
-                <img src="{{asset('images/gundam.jpg')}}">
-            </div>
-            <div class="content">
-                <a class="header">My Neighbor Totoro</a>
-                <div class="meta">
-                    <span class="cinema">IFC Cinema</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    <div class="ui right floated primary button">
-                        Detail
-                        <i class="right chevron icon"></i>
-                    </div>
-                    <div class="ui red label">Limited</div>
-                </div>
-            </div>
-        </div>
+        @endforeach
         <div class="item">
             <div class="ui small rounded image">
                 <img src="{{asset('images/man.jpg')}}">
