@@ -71,7 +71,7 @@
                 <a class="active item" href="{{url('/management')}}")}}>Blog Management</a>
                 <a class="item">Label Management</a>
                 <a class="item">Blog Group Management</a>
-                <!--<a class="item" href="{{url('/publish')}}">Publish A Blog</a>-->
+                <a class="item" href="{{url('/publish')}}">Publish A Blog</a>
             </div>
         </div>
     </div>
