@@ -8,9 +8,6 @@
         <div class="ui divided items">
             @foreach($articles as $article)
             <div class="item">
-                <div class="ui small rounded image">
-                    <img src="{{asset('images/gundam.jpg')}}">
-                </div>
                 <div class="content">
                     <a class="header">{{$article}}</a>
                     <div class="meta">
@@ -27,9 +24,6 @@
             </div>
             @endforeach
             <div class="item">
-                <div class="ui small rounded image">
-                    <img src="{{asset('images/man.jpg')}}">
-                </div>
                 <div class="content">
                     <a class="header">Watchmen</a>
                     <div class="meta">
@@ -39,10 +33,6 @@
                         <p></p>
                     </div>
                     <div class="extra">
-                        <div class="ui right floated primary button">
-                            Detail
-                            <i class="right chevron icon"></i>
-                        </div>
                     </div>
                 </div>
             </div>

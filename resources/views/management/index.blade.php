@@ -15,9 +15,6 @@
     <div class="ui segment container" style="min-height:900px;">
         <div class="ui divided items">
             <div class="item">
-                <div class="ui small rounded image">
-                    <img src="{{asset('images/gundam.jpg')}}">
-                </div>
                 <div class="content">
                     <a class="header">12 Years a Slave</a>
                     <div class="meta">
@@ -33,9 +30,6 @@
                 </div>
             </div>
             <div class="item">
-                <div class="ui small rounded image">
-                    <img src="{{asset('images/man.jpg')}}">
-                </div>
                 <div class="content">
                     <a class="header">Watchmen</a>
                     <div class="meta">
