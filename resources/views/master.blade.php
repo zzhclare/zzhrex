@@ -39,7 +39,7 @@
         </a>
     </div>
 </div>
-<div class="ui container" style="margin-top:100px;background:transparent;">
+<div class="ui grid" style="margin-top:100px;background:transparent;">
 @yield('content')
 </div>
 <script>
