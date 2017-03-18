@@ -9,8 +9,7 @@ use App\Article;
 class IndexController extends Controller
 {
     public function index(){
-        $articles = new Article;
-        //$articles = $articles->getArticleName();
+        $articles = Article::all();
 
         return view('index.index', ['articles' => $articles]);
     }
