@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    protected $table = 'articles';
+    protected $guarded = ['id'];
+    protected $casts = ['labels' => 'array'];
+
     public function getArticles(){
         $names = getNames();
         $descriptions = getDescriptions();

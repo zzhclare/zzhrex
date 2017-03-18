@@ -6,40 +6,25 @@
 <div class="ui twelve wide column">
     <div class="ui segment container" style="min-height:900px;">
         <div class="ui divided items">
-            @foreach($articles as $article)
+            @foreach($articles as $ar)
             <div class="item">
                 <div class="content">
-                    <a class="header">{{$article}}</a>
-                    <div class="meta">
-                        <span class="cinema">Union Square 14</span>
-                    </div>
+                    <a class="header" href="{{ url('/blog').'/'.$ar->header }}">{{$ar->header}}</a>
                     <div class="description">
-                        <p></p>
+                        {{$ar->description}}
                     </div>
                     <div class="extra">
-                        <div class="ui blue label">IMAX</div>
-                        <div class="ui yellow label"><i class="globe icon"></i> Additional Languages</div>
+                        @foreach($ar->labels as $label)
+                        <div class="ui {{App\Label::where('name', $label)->first()->color}} label">{{$label}}</div>
+                        @endforeach
                     </div>
                 </div>
             </div>
             @endforeach
-            <div class="item">
-                <div class="content">
-                    <a class="header">Watchmen</a>
-                    <div class="meta">
-                        <span class="cinema">IFC</span>
-                    </div>
-                    <div class="description">
-                        <p></p>
-                    </div>
-                    <div class="extra">
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
-<div class="ui four wide column">
+<div class="ui four wide column ">
     <div class="ui card">
         <div class="image">
             <img src="{{asset('images/man.jpg')}}">
