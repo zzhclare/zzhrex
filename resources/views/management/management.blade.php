@@ -8,13 +8,14 @@
         @foreach($articles as $ar)
         <div class="item">
             <div class="content">
-                <a class="header">{{$ar->header}}</a>
+                <a class="header" href="{{ url('/article').'/'.$ar->id }}">{{$ar->header}}</a>
                 <div class="description">
                     {{$ar->description}}
                 </div>
                 <div class="extra">
-                    <div class="ui blue label">IMAX</div>
-                    <div class="ui yellow label"><i class="globe icon"></i> Additional Languages</div>
+                    @foreach($ar->labels as $label)
+                    <div class="ui {{App\Label::where('name', $label)->first()->color}} label">{{$label}}</div>
+                    @endforeach
                 </div>
             </div>
         </div>

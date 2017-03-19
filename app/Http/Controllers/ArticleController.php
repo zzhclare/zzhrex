@@ -8,11 +8,17 @@ use App\Label;
 
 use App\Article;
 
-class PublishController extends Controller
+class ArticleController extends Controller
 {
-    public function index(){
+    public function index($id){
+        $ar = Article::find($id);
+
+        return view('blog.index', ['article' => $ar]);
+    }
+
+    public function create(){
         $labels = Label::all();
-        return view('blog.index', ['labels' => $labels]);
+        return view('blog.publish', ['labels' => $labels]);
     }
 
     public function saveArticle(REQUEST $request){

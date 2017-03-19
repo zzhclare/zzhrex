@@ -23,7 +23,9 @@ Route::group(['middleware' => ['auth']], function (){
     
     Route::get('/label', 'LabelController@index');
 
-    Route::get('/publish', 'PublishController@index');
+    Route::get('/publish', 'ArticleController@create');
 
-    Route::post('/publish/save', 'PublishController@saveArticle');
+    Route::post('/publish/save', 'ArticleController@saveArticle');
+
+    Route::get('/article/{id}', 'ArticleController@index');
 });
