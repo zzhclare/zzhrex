@@ -3,13 +3,13 @@
 @section('title', 'zzhRex')
 
 @section('content')
-<div class="ui twelve wide column">
+<div class="ui thirteen wide column">
     <div class="ui segment container" style="min-height:900px;">
         <div class="ui divided items">
             @foreach($articles as $ar)
             <div class="item">
                 <div class="content">
-                    <a class="header" href="{{ url('/blog').'/'.$ar->header }}">{{$ar->header}}</a>
+                    <a class="header" href="{{ url('/article').'/'.$ar->id }}">{{$ar->header}}</a>
                     <div class="description">
                         {{$ar->description}}
                     </div>
@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<div class="ui four wide column ">
+<div class="ui three wide column ">
     <div class="ui card">
         <div class="image">
             <img src="{{asset('images/man.jpg')}}">
