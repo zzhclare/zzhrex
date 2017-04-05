@@ -12,4 +12,16 @@ class LabelController extends Controller
         $labels = Label::all();
         return view('management.label', ['labels' => $labels]);
     }
+
+    public function save(REQUEST $request){
+        if(!empty($request->input())){
+            foreach($request->input() as $k => $v){
+                $id = explode('_', $k)[1];
+                $label = Label::find($id);
+                $label->color = $v;
+                $label->save();
+            }
+        }
+        return redirect('/label');
+    }
 }
