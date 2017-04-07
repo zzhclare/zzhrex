@@ -27,6 +27,8 @@ Route::group(['middleware' => ['auth']], function (){
 
     Route::post('/label/save', 'LabelController@save');
 
+    Route::post('/label/delete', 'LabelController@delete');
+
     Route::get('/publish', 'ArticleController@create');
 
     Route::post('/publish/save', 'ArticleController@saveArticle');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Label;
 
+use App\Article;
+
 class LabelController extends Controller
 {
     public function index(){
@@ -22,6 +24,27 @@ class LabelController extends Controller
                 $label->save();
             }
         }
+        return redirect('/label');
+    }
+
+    public function delete(REQUEST $request){
+        $id = $request->id;
+        $label = Label::find($id);
+        foreach(Article::all() as $ar){
+            if(in_array($label->name, $ar->labels)){
+                $name = [];
+                foreach($ar->labels as $labelName){
+                    if($labelName !== $label->name){
+                        $name[] = $labelName;
+                    }
+                }
+                $ar->labels = $name;
+                $ar->save();
+            }
+        }
+
+        Label::destroy($id);
+
         return redirect('/label');
     }
 }
