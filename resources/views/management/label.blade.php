@@ -41,9 +41,9 @@
                 </td>
                 <td>
                     <div class="ui buttons">
-                        <div class="ui blue button edit">Rename</div>
+                        <div class="ui blue button edit" data-id="{{$label->id}}">Rename</div>
                         <div class="or"></div>
-                        <div class="ui button red remove">Remove</div>
+                        <div class="ui button red remove" data-id="{{$label->id}}">Remove</div>
                     </div>
                 </td>
             </tr>
@@ -53,11 +53,26 @@
         <div class="ui green submit button right floated">Submit</div>
     </form>
 </div>
+<div class="ui modal remove-confirm">
+    <i class="close icon"></i>
+    <div class="header">Confirm delete</div>
+    <div class="content">
+        Are you sure to delete this label?
+        <form action="{{ url('/label/delete') }}" method="POST" class="ui form delete-form">
+            <input type="hidden" name="id" id="delete-input">
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui cancel red button">Cancel</div>
+        <div class="ui approve green button">Approve</div>
+    </div>
+</div>
 <script>
 $(document).ready(function(){
     $('.vertical.menu .item').removeClass('active');
     $('.label.item').addClass('active');
     $('.dropdown').dropdown();
+    $('.modal').modal();
 
     $('.labeled.dropdown').click(function(){
         var oldColor = $(this).data('color');
@@ -69,6 +84,20 @@ $(document).ready(function(){
 
     $('.submit').click(function(){
         $('.label-form').submit();
+    });
+
+    $('.button.edit').click(function(){
+        var id = $(this).data('id');
+    });
+
+    $('.button.remove').click(function(){
+        var id = $(this).data('id');
+        $('#delete-input').val(id);
+        $('.modal').modal('show');
+    });
+
+    $('.modal .approve').click(function(){
+        $('.modal .delete-form').submit();
     });
 
 });
