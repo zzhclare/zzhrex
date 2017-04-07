@@ -17,6 +17,8 @@ Route::get('/login', 'LoginController@index');
 
 Route::post('/login', 'LoginController@Login');
 
+Route::get('/article/{id}', 'ArticleController@index');
+
 Route::group(['middleware' => ['auth']], function (){
 
     Route::get('/management', 'ManagementController@index');
@@ -29,6 +31,5 @@ Route::group(['middleware' => ['auth']], function (){
 
     Route::post('/publish/save', 'ArticleController@saveArticle');
 
-    Route::get('/article/{id}', 'ArticleController@index');
 
 });
