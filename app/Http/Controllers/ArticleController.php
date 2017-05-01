@@ -12,6 +12,8 @@ class ArticleController extends Controller
 {
     public function index($id){
         $ar = Article::find($id);
+        $ar->read_times += 1;
+        $ar->save();
 
         return view('blog.index', ['article' => $ar]);
     }
