@@ -10,32 +10,21 @@ class Article extends Model
     protected $guarded = ['id'];
     protected $casts = ['labels' => 'array'];
 
-    public function getArticles(){
-        $names = getNames();
-        $descriptions = getDescriptions();
-        $labels = getLabels();
-        
-        return ['names' => $names, 'descriptions' => $descriptions, 'labels' =>$labels];
+    static public function getRank($num = 5){
+        $ranks = Article::orderBy('read_times', 'desc')->limit($num)->get();
+        return $ranks;
     }
 
-    public function getNames(){
-        $path = storage_path().'/app/article/';
-        $handler = opendir($path);
-        while(($filename = readdir($handler)) !== false){
-            if($filename != '.' && $filename != '..'){
-                $filenames[] = $filename;
+    static public function getTimeGroup(){
+        $timeGroup = [];
+        foreach(Article::all() as $ar){
+            $time = strtotime($ar->created_at);
+            $date = date("Y-m", $time);
+            if(!in_array($date, $timeGroup)){
+                $timeGroup[] = $date;
             }
         }
-        closedir($handler);
-    
-        return $filenames;
-    }
-
-    public function getDescriptions(){
-
-    }
-
-    public function getLabels(){
-
+        
+        return $timeGroup;
     }
 }

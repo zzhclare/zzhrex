@@ -46,42 +46,30 @@
                         文章分类
                     </div>
                     <div class="content">
-                        <p class="transition hidden">
-                        分类1
-                        </p>
-                        <p class="transition hidden">
-                        分类2
-                        </p>
-                        <p class="transition hidden">
-                        分类3
-                        </p>
-                        <p class="transition hidden">
-                        分类4
-                        </p>
+                        @foreach(App\Label::all() as $label)
+                        <div class="ui divider"></div>
+                        <p class="transition hidden"><a class="label_{{$label->id}}">{{$label->name}}</a></p>
+                        @endforeach
                     </div>
                     <div class="title">
                         <i class="calendar icon"></i>
                         文章存档
                     </div>
                     <div class="content">
-                        <p class="transition hidden">
-                        2017-02-24
-                        </p>
-                        <p class="transition hidden">
-                        2017-02-25
-                        </p>
+                        @foreach(App\Article::getTimeGroup() as $date)
+                        <div class="ui divider"></div>
+                        <p class="transition hidden"><a>{{$date}}</a></p>
+                        @endforeach
                     </div>
                     <div class="title">
                         <i class="unhide icon"></i>
                         阅读排行
                     </div>
                     <div class="content">
-                        <p class="transition hidden">
-                        article 1
-                        </p>
-                        <p class="transition hidden">
-                        article 2
-                        </p>
+                        @foreach(App\Article::getRank() as $rank)
+                        <div class="ui divider"></div>
+                        <p class="transition hidden" ><a href="{{ url('/article').'/'.$rank->id }}">{{$rank->header}} ({{$rank->read_times}}次)</a></p>
+                        @endforeach
                     </div>
                 </div>
             </div>
