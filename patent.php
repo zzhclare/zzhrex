@@ -24,9 +24,9 @@ $min = calBias($res, $data);//将初始参数值的预测值误差设为最小�
 $minPara = ['Alpha' => $Alpha, 'Beta' => $Beta, 'Gama' => $Gama];
 
 for(; $currentA >= $accuracy; $currentA *= 0.1){
-    for(; $Alpha < $bestAlpha + $currentA * 0.1; $Alpha += $currentA){
-        for(; $Beta < $bestBeta + $currentA * 0.1; $Beta += $currentA){
-            for(; $Gama < $bestGama + $currentA * 0.1; $Gama += $currentA){
+    for(; $Alpha < $bestAlpha + $currentA; $Alpha += $currentA){
+        for(; $Beta < $bestBeta + $currentA; $Beta += $currentA){
+            for(; $Gama < $bestGama + $currentA; $Gama += $currentA){
                 $res = calValue($Alpha, $Beta, $Gama, $data);//计算当前参数值的预测值
                 $temp = calBias($res, $data);
                 if($temp < $min){
@@ -36,6 +36,9 @@ for(; $currentA >= $accuracy; $currentA *= 0.1){
             }
         }
     }
+    $bestAlpha = $minPara['Alpha'] - $currentA;//例$minPara['Alpha'] = 0.5,最佳值可能在0.4-0.6之间，所以要从0.4算起
+    $bestBeta = $minPara['Beta'] - $currentA;
+    $bestGama = $minPara['Gama'] - $currentA;
 }
 
 return ['min' => $min, 'para' => $minPara];
